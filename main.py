@@ -9,6 +9,8 @@ def listinput():
     plist = ['a','b','c','d','e']
   if input == 'nest':
     plist = ['a', ['b', ['c', 'd'], 'e']]
+  if input == 'peat':
+    plist = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
   else:
     elements = re.findall(r'\w+',input)
     for elem in elements: plist.append(elem)
@@ -50,3 +52,12 @@ if problemNumber == 6:
 
 if problemNumber == 7:
   print collapse(plist)    
+
+if problemNumber == 8:
+  last = plist[0]
+  nlist = [last]
+  for i in range(len(plist)):
+    curr = plist[i]
+    if curr != last: nlist.append(curr)
+    last = plist[i]
+  print nlist
