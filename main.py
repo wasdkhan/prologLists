@@ -7,12 +7,13 @@ def listinput():
   plist = []
   if input == 'def': 
     plist = ['a','b','c','d','e']
-    print plist
-    return plist
+  if input == 'nest':
+    plist = ['a', ['b', ['c', 'd'], 'e']]
   else:
-    elements = re.findall(r'[\w]+',input)
+    elements = re.findall(r'\w+',input)
     for elem in elements: plist.append(elem)
-    return plist
+  print plist
+  return plist
 
 plist = listinput()
 
