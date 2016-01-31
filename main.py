@@ -7,9 +7,9 @@ def listinput():
   plist = []
   if input == 'def': 
     plist = ['a','b','c','d','e']
-  if input == 'nest':
+  elif input == 'nest':
     plist = ['a', ['b', ['c', 'd'], 'e']]
-  if input == 'peat':
+  elif input == 'peat':
     plist = ['a','a','a','a','b','c','c','a','a','d','e','e','e','e']
   else:
     elements = re.findall(r'\w+',input)
@@ -46,9 +46,9 @@ if problemNumber == 5:
   print plist
 
 if problemNumber == 6:
-  newList = plist[:]
-  newList.reverse()
-  print plist == newList
+  nlist = plist[:]
+  nlist.reverse()
+  print plist == nlist
 
 if problemNumber == 7:
   print collapse(plist)    
@@ -60,4 +60,19 @@ if problemNumber == 8:
     curr = plist[i]
     if curr != last: nlist.append(curr)
     last = plist[i]
+  print nlist
+
+if problemNumber == 9:
+  last = plist[0]
+  currlist = []
+  nlist = []
+  for i in range(len(plist)):
+    curr = plist[i]
+    if curr == last:
+      currlist.append(curr)
+    else:
+      nlist.append(currlist)
+      currlist = [curr]
+    last = plist[i]
+  nlist.append(currlist)
   print nlist
