@@ -76,3 +76,9 @@ if problemNumber == 9:
     last = plist[i]
   nlist.append(currlist)
   print nlist
+
+if problemNumber == 14:
+  nlist = []
+  for elem in plist:
+    nlist.extend([elem,elem])
+  print nlist
